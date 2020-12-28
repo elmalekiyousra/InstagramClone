@@ -29,7 +29,5 @@ Vue.component('follow-button', require('./components/Follow.vue').default);
 
 const app = new Vue({
     el: '#app',
-    components: {
-        FollowButton
-    }
+
 });

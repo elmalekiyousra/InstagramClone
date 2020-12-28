@@ -1,22 +1,25 @@
 <template>
     <div>
-         <button class="btn btn-primary" onclick="testFunction()">follow</button>
+         <button class="btn btn-primary ml-4" @click="followUser()">Follow</button>
     </div>
 </template>
 
 <script>
-    export default {
-       props: ['userId', 'follows'],
-       mounted() {
-               console.log('Component mounted.')
-           },
-       methods: {
-            function testFunction()
-               {
-                   console.log(alert('inside'));
-               }
-       }
-    }
+   export default {
+          props: ['userId', 'follows'],
+          mounted() {
+              console.log('Component mounted.')
+          },
+
+          methods: {
+              followUser() {
+                 axios.post('/follow/' + this.userId).then(response => {
+                    alert(response.data);
+                 });
+              }
+          }
+
+      }
 </script>
 
 
