@@ -20,6 +20,10 @@ Route::get('/email', function () {
     return new NewUserWelcomeMail();
 });
 
+Route::get('redirect/facebook', 'Auth\LoginController@redirect');
+Route::get('callback/facebook', 'Auth\LoginController@callback');
+
+
 Route::post('follow/{user}', 'FollowsController@store');
 
 Route::get('/', 'PostsController@index');
